@@ -1,0 +1,367 @@
+/*清除全部样式*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+}
+*{box-sizing: border-box;}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-family: "Microsoft YaHei";
+    background: #f5f6f7;
+}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+ul,ol {
+    list-style: none;
+}
+img {
+    border: none;
+    vertical-align: middle;
+}
+a {
+    text-decoration: none;
+}
+input, textarea {
+    background:none;
+    outline: none;
+    border: none;
+}
+textarea {
+    resize: none;
+    overflow: auto;
+}
+button {
+    outline: none;
+    border: none;
+}
+button:focus {
+    outline: none;
+    border: none;
+}
+.fl {
+    /*左浮动*/
+    float: left
+}
+.fr {
+    /*右浮动*/
+    float: right
+}
+.cf{
+    /*清除浮动*/
+    clear: both;
+}
+.tl {
+    /*左对齐*/
+    text-align: left;
+}
+.tc {
+    /*居中*/
+    text-align: center
+}
+.tr {
+    /*右对齐*/
+    text-align: right;
+}
+/*淡入动画开始*/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    /*初始状态 透明度为0*/
+    40% {
+        opacity: 0;
+    }
+    /*过渡状态 透明度为0*/
+    100% {
+        opacity: 1;
+    }
+    /*结束状态 透明度为1*/
+}
+@-webkit-keyframes fade-in { /*针对webkit内核*/
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/*淡入动画结束*/
+
+.LoginBody {
+    /*登录页面主布局*/
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.LoginBody video {
+    /*视频背景播放器样式*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.LoginCover {
+    /*视频播放器封面*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../data/For_Wes.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.LoginOverlay {
+    /*透明蒙板*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+}
+
+.LoginBg {
+    /*登录框*/
+    z-index: 2;
+    position: absolute;
+    display: inline-block;
+    top: 5%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translatex(-50%);
+    animation: fade-in; /*动画名称*/
+    animation-duration: 1.5s; /*动画持续时间*/
+    -webkit-animation: fade-in 1.5s; /*针对webkit内核*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+}
+
+.LoginLogo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.LoginLogo img {
+    height: 250px;
+}
+
+.LoginEditBg {
+    /*文本输入框背景*/
+    width: auto;
+    display: inline-block;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    margin: auto;
+    padding: 10px;
+}
+
+.LoginEditBg input {
+    /*输入框样式*/
+    font-size: 23px;
+    color: #ffffff;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.LoginEditBg img {
+    /*图片样式*/
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.LoginButton {
+    /*登录按钮*/
+    background: url('../image/icon/登录.png') no-repeat;
+    background-size: 60px 60px;
+    border: 0;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    margin: 20px auto;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-animation-name: scaleDraw; /*关键帧名称*/
+    -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+    -webkit-animation-iteration-count: infinite;  /*动画播放的次数*/
+    -webkit-animation-duration: 5s; /*动画所花费的时间*/
+}
+
+.LoginButton:hover {
+    /*登录按钮选中状态*/
+    background: url('../image/icon/登录选中.png') no-repeat;
+    background-size: 60px 60px;
+}
+
+.HomeBody {
+    /*首页主布局*/
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: none;
+    background: #57606f;
+}
+
+.BaseNav {
+    /*通用的顶部导航栏*/
+    width: 100%;
+    background: #2f3542;
+    /*设置文本不可选中*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.BaseNav li {
+    display:inline-block;
+    padding: 10px;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    height: 60px;
+}
+
+.BaseNav li:hover {
+    background: #57606f;
+}
+
+.BaseNavLogo {
+    height: 40px;
+    padding-left:30px;
+    padding-right:30px;
+    vertical-align: middle;
+}
+
+.BaseNav li a {
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.BaseNav li a img {
+    height: 25px;
+    vertical-align: middle;
+}
+
+.BaseMain {
+    width: 100%;
+    padding: 30px 100px;
+    position: fixed;
+    top: 60px;
+    bottom: 30px;
+    overflow-y: auto;
+}
+
+.BaseMainBody {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background: #2f3542;
+    color: #fff;
+    border-radius: 15px;
+    overflow-y: auto;
+    display: none;
+}
+
+.BaseMainBody table {
+    background: #fff;
+}
+
+.BaseBottom {
+    font-size: 15px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    background: #2f3542;
+    padding: 10px 0px;
+    display: inline-block;
+}
+
+.NoPower {
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+}
+
+.BaseSortNav {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.BaseSortNav ul {
+    font-size: 0;
+    margin-right: 20px;
+    float: left;
+}
+
+.BaseSortNav ul li {
+    background: #57606f;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 0;
+    font-size: 20px;
+}
+
+.BaseSortNav ul li:hover {
+    background: #fff;
+    color: #000;
+}
+
+.BaseSortNav button {
+    background: #fff;
+    color: #000;
+    padding: 10px 30px;
+    margin: 0;
+    font-size: 20px;
+    float: left;
+}
+
+.BaseSortNav button:hover {
+    background: #57606f;
+    color: #fff;
+}
+
+.BaseLog {
+    padding: 10px 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.BaseLogEdit {
+    width: 100%;
+    height: 100%;
+    color: #000;
+}
